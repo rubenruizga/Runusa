@@ -20,3 +20,19 @@ body, html{
 .second-inline{
   display: inline-block;
 }
+.general-dark{
+  background-image: url(../img/black_lozenge.png);
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat-x: initial;
+  background-repeat-y: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: #212121;
+  color: #fff;
+}
+.general-dark label{
+  color: #fff;
+}

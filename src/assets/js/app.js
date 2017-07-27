@@ -10,3 +10,26 @@ import Foundation from 'foundation-sites';
 
 
 $(document).foundation();
+$(document).ready(function() {
+  console.log("hola");
+  return $('#contact-form').submit(function(e) {
+    var email, message, name;
+    name = document.getElementById('inputName');
+    email = document.getElementById('inputEmail');
+    message = document.getElementById('inputMessage');
+    if (!name.value || !email.value || !message.value) {
+      console.log('Please check your entries');
+      return false;
+    } else {
+      $.ajax({
+        method: 'POST',
+        url: '//formspree.io/e9.ruben@gmail.com',
+        data: $('#contact-form').serialize(),
+        datatype: 'json'
+      });
+      e.preventDefault();
+      $(this).get(0).reset();
+      return console.log('Message sent');
+    }
+  });
+});

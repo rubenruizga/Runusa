@@ -1,10 +1,11 @@
-.video{
+.videoBg{
   width: 100%;
   height: 100%;
   position: relative;
   overflow: hidden;
 }
-.video video{
+
+.videoBg video{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -15,7 +16,7 @@
   height: auto;
   z-index: -2;
 }
-.video-container{
+.videoBg-container{
   z-index: -1;
   position: absolute;
   background: rgba(0,0,0,0.5);
@@ -29,7 +30,7 @@
   align-items: center;
   text-align: center;
 }
-.video-header{
+.videoBg-header{
   color: white;
 }
 

@@ -1,5 +1,63 @@
+@import "settings";
+@include add-foundation-colors;
+
 .mynav{
-  height: 0%;
-  font-size: 1rem;
-  color: #fff;
+  background: $white;
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 6px 4px -4px rgba(0,0,0,.3);
+  padding: 0 3.5rem;
+  @media only screen and (max-width: 640px) {
+    padding: 0 2.5rem;
+  }
+  z-index: 100;
+  i{
+    color: $primary-color;
+  }
+  a{
+    color: $primary-color;
+    // font-family: 'DIN-Bold';
+  }
+  a:hover {
+    color: $secondary-color;
+  }
+}
+.mynav-desk{
+  @include max-width();
+}
+.mynav img{
+  height: 3rem;
+}
+#mobile-menu-button{
+  display: none;
+}
+.mynav-menu{
+  display: inline;
+}
+.mynav-mobile{
+  background: $white;
+  height: 100vh;
+  padding: 1.5rem;
+  position: absolute;
+  top: -100vh;
+  left: 0;
+  transition: top 0.5s ease-out;
+  width: 100%;
+  z-index: 1000;
+}
+.mynav-mobile-options{
+  @include absolute-center;
+  // font-family: 'DIN-Regular';
+  font-size: 3rem;
+  line-height: 6rem;
+  text-align: center;
+}
+@media only screen and (max-width: 64.063em) {
+  .mynav-menu{
+    display: none;
+  }
+  #mobile-menu-button{
+    display: inline;
+  }
 }

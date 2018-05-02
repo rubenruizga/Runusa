@@ -1,5 +1,17 @@
 import $ from 'jquery';
 import whatInput from 'what-input';
+//TopBar
+function dropIt() {
+    document.getElementById("mobile-menu").style.top='0';
+}
+function pickIt() {
+    document.getElementById("mobile-menu").style.top='-100vh';
+}
+document.getElementById("mobile-menu-button").addEventListener ("click", dropIt, false);
+document.getElementById("mobile-menu-button-close").addEventListener ("click", pickIt, false);
+document.getElementById("mobile-menu-item-1").addEventListener ("click", pickIt, false);
+document.getElementById("mobile-menu-item-2").addEventListener ("click", pickIt, false);
+document.getElementById("mobile-menu-item-4").addEventListener ("click", pickIt, false);
 
 window.$ = $;
 
@@ -8,28 +20,4 @@ import Foundation from 'foundation-sites';
 // the line below
 //import './lib/foundation-explicit-pieces';
 
-
 $(document).foundation();
-$(document).ready(function() {
-  console.log("hola");
-  return $('#contact-form').submit(function(e) {
-    var email, message, name;
-    name = document.getElementById('inputName');
-    email = document.getElementById('inputEmail');
-    message = document.getElementById('inputMessage');
-    if (!name.value || !email.value || !message.value) {
-      console.log('Please check your entries');
-      return false;
-    } else {
-      $.ajax({
-        method: 'POST',
-        url: '//formspree.io/e9.ruben@gmail.com',
-        data: $('#contact-form').serialize(),
-        datatype: 'json'
-      });
-      e.preventDefault();
-      $(this).get(0).reset();
-      return console.log('Message sent');
-    }
-  });
-});
